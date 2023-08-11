@@ -64,7 +64,7 @@ int currentIndex =0;
         BottomNavigationBarItem(icon: Icon(Icons.security), label: "Security",
         backgroundColor: Colors.greenAccent),
         BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile",
-        backgroundColor: Colors.pinkAccent), 
+        backgroundColor: Colors.orangeAccent), 
       ],
           currentIndex: currentIndex,
         selectedItemColor: Colors.black,
