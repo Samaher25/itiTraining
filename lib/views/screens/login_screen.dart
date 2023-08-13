@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/screens/home_screen.dart';
-import 'package:flutter_application_2/widgets/custom_button.dart';
+import 'package:flutter_application_2/views/screens/home_screen.dart';
+import 'package:flutter_application_2/views/widgets/custom_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
