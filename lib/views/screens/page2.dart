@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/models/todo_model.dart';
 import 'package:flutter_application_2/service/todo_service.dart';
+import 'package:flutter_application_2/views/cubit/todos_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
@@ -8,39 +10,41 @@ class Page2 extends StatefulWidget {
   @override
   State<Page2> createState() => _Page2State();
 }
-
 class _Page2State extends State<Page2> {
-  List<TodoModel> todos = [];
-  bool isLoading = true;
-
-  getMyTodos() async {
-    todos = await TodoService().getTodos();
-    isLoading = false;
-    setState(() {});
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getMyTodos();
-  }
-
-  @override
+ 
+ @override
   Widget build(BuildContext context) {
-    return isLoading ? 
-    Center(
-       child: CircularProgressIndicator( ),
-       )
-    :  ListView.builder(
-      itemCount: todos.length,
-      itemBuilder: (BuildContext context,int index) {
+    return BlocProvider(
+      create: (context) => TodosCubit(),
+      child: BlocConsumer<TodosCubit,TodosState>(
+        builder: (context, state) {
+        if(state is TodosLoading){
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+        if(state is TodosError){
+          return Center(
+           child: Text("Error"),
+          );
+        }
+        return ListView.builder(
+      itemCount: context.watch<TodosCubit>().todos.length,
+      itemBuilder: ( BuildContext context,int index) {
         return ListTile(
-          title: Text(todos[index].title ?? "--"),
-          //subtitle: Text(todos[index].completed ?? "--"),
+          title: Text(context.watch<TodosCubit>().todos[index].title ?? '--'),
           trailing: Icon(Icons.person_2_outlined),
           leading: Text("${index + 1}"),
+
         );
-      }, 
+      },
+    );
+ },
+      listener: (context, state) {},
+      ),
     );
   }
 }
+
+
+
