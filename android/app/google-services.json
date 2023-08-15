@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "354857769646",
+    "project_id": "ititraining-2d5e8",
+    "storage_bucket": "ititraining-2d5e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354857769646:android:d767a03043f7153772eb3f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354857769646-42v1apdjb5svfkecpdqqlkciftc1vja9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW3ZqUD1kdk8gG1pvtW6a6x_8xWVHrNsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354857769646-42v1apdjb5svfkecpdqqlkciftc1vja9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
